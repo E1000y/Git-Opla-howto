@@ -63,17 +63,48 @@
         Note that the interface is not sensitive to the case of the inputs. When an intent is modified, a SAVE button appears on top of the page, intent section, next to the Playground which must be clicked in order to save the progress.
             <img class ="centered" src="images/click-save.png" width =1000>
         
-        <ol><ul>
-            Documentation conventions 
-        </ul>
-        </ol>
-        We will document the exchanges in the following way : the buttons will be written in square brackets and the lines of code and the variables between chevrons. However, do not confuse line of code (which is displayed in blue in the editor) and variable (which is displayed in green), otherwise the settings will not work. Reminders of settings will be made in parentheses, to keep the logical structure of the explanation, but will not be repeated in the bot. <br> <br>
+ 
+        <h2>Documentation conventions</h2> 
+        
+        <p>We will document the exchanges in the following way : the buttons will be written in square brackets and the lines of code and the variables between chevrons. However, do not confuse line of code (which is displayed in blue in the editor) and variable (which is displayed in green), otherwise the settings will not work. Reminders of settings will be made in parentheses, to keep the logical structure of the explanation, but will not be repeated in the bot. <br> <br>
      
 
         #Hello <br>
         Input : Hello, hi <br>
         Output : Would you like a sweet pizza? [yes] [no] &#60action=sweetyesno&#62 <br>
+        </p>
+
         <img class ="centered" src="images/image16.png" width =1000>
+
+        <p>The code written between chevrons does not appear in the console, it is used to direct the discussion. The robot identifies the lines of codes equal to the conditional ones and thus follows the thread of the discussion, a little like the ends of a piece of puzzle.</p>
+
+        <h2>Diagram 1 : Pizzas!</h2>
+        We will set the following path up : <br>
+
+        <img class ="centered" src="images/image20.png" width =1000>
+
+        #Hello <br>
+        Input : Hello, Hi<br>
+        Output : Would you like a sweet pizza [Yes][No] &#60action=sweetyesno&#62 <br><br>
+
+        the code 'action=sweetyesno' must be copied in the following conditional to link the intent #Hello to the next #Yes. We will follow the Yes branch to enter the two Outputs contained in the intent #yes on the left branch of the diagram: <br><br>
+
+        #Yes <br>
+        Input : yes <br>
+        Output : <br>
+        action =  sweetyesno <br>
+        Would you like apples on it ?<br>
+        [Yes][No]&#60action=applesyesno&#62 <br><br>
+
+        <img class ="centered" src="images/image14.png" width =1000> <br>
+
+        #Yes<br>
+        Input : yes <br>
+        Output : <br>
+        action=applesyesno <br>
+        this is an apple-chocolate pizza!<br><br>
+        <img class ="centered" src="images/apples-chocolate-pizza.png" width =1000> <br>
+
 
     </body>
 
