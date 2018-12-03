@@ -105,6 +105,40 @@
         this is an apple-chocolate pizza!<br><br>
         <img class ="centered" src="images/apples-chocolate-pizza.png" width =1000> <br>
 
+        Congratulations, you have written your first conversational diagram branch! Now, let's add the No that leads to all-chocolate pizza.<br><br>
+
+        #No <br>
+        Input : No <br>
+        Output : <br>
+        action=applesyesno <br>
+        all-chocolate pizza ! <br>
+
+        <img class ="centered" src="images/all-chocolate-pizza.png" width =1000> <br>
+    
+        Then we will add the right branch of the diagram : <br> <br>
+        #No<br>
+        Input : no <br>
+        action = sweetyesno <br>
+        Would you like mushrooms? <br>
+        [yes][no]&#60action=mushroomsyesno&#62<br> <br>
+
+        #Yes<br>
+        Input : Yes<br>
+        Output : <br>
+        action = mushroomsyesno <br>
+        Let's go for a Queen Pizza <br><br>
+
+        #No <br>
+        Input : no <br>
+        Output : <br>
+        action=mushroomsyesno<br>
+        Let's go for a Three-Cheese Pizza! <br><br>
+
+        Here we go, the first conversational pattern is created! Let's now follow suit with the "Contact" Diagram, which manages manual inputs done by the user.
+
+        <H2>Diagram 2 : Contact</H2>
+        <img class ="centered" src="images/image4.png" width =1000> <br>
+
 
     </body>
 
