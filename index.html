@@ -165,7 +165,58 @@
         <h3>The intent #Any</h3>
         The intent #Any is used to store any value given by the user in a variable accessible with the <img class="text-aligned" src="images/image1.png" width =20> button and which has for syntax (variable=*), the parentheses indicating that one writes inside the square that appears on the line when the button is pressed.<br>
 
-        <img class ="centered" src="images/any-input.png" width =800><br>
+        <img class ="centered" src="images/any-input.png" width =800><br><br>
+        Click on the icon with 4 corners to display the code @any <br>
+
+        #Any<br>
+        input : (@any)<br>
+        output : <br>
+        action = confirmphonenbr <br>
+        (phonenbr=*) is your phone number, right?<br>
+        &#60action=phonenbrconfirmed&#62[Yes][No]<br><br>
+
+        #yes<br>
+        action = phonenbrconfirmed<br>
+        What is your mail? (mail=*)&#60action=confirmmmail&#62<br><br>
+
+        #Any<br>
+        action = confirmmail <br>
+        (mail=*) is your mail, right? <br>
+        &#60action=mailconfirmed&#62 [yes][no] <br><br>
+
+        #yes<br>
+        action=mailconfirmed<br>
+        Ok, your contact is registered <br><br>
+
+
+We went through the left branch of the diagram. We will now focus on the right branch <br><br>
+
+(#contact - already written but as a reminder for reading <br>
+Would you like to give out your phone number? <br>
+[yes][no]&#60action=getphoneyesno&#62 <br><br>
+
+#No<br>
+Input : No<br>
+Output : <br>
+action = getphoneyesno<br>
+What is your mail? (mail=*)&#60action=confirmmail2&#62<br><br>
+
+#any<br>
+Output :<br>
+action=confirmmail2<br>
+(mail=*) is your mail, right?<br>
+&#60action= mailconfirmed2&#62[yes][no]<br><br>
+
+#yes<br>
+action = mailconfirmed2<br>
+Ok, your contact is registered.<br><br>
+
+<h2>"No" loops</h2>
+
+We will then add two loops for the "No" on the left branch : we can see that the arrow rewinds them up one step upwards : we will then take as a conditional the former code line, which will loop the chatbot over the question.
+
+
+
 
     </body>
 
