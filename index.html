@@ -17,19 +17,19 @@
         <h1 class ="header--main">Documentation and tricks</h1>
         
 
-        <ol><li><h2>Presentation </h2></li>
-            <li><h2>The console builder</h2></li>
-            <h3>Documentation conventions</h3>
-            <li><h2>Diagram 1 : Pizzas! </h2></li>
-            <li><h2>Diagram 2 : Contact</h2></li>
-            <h3>#Any Intents</h3>
-            <h3>"No" loops</h3>
-            <li><h2>Conclusion</h2></li></ol>
+        <ol><li><h2><a href="#Presentation">Presentation</a> </h2></li>
+            <li><h2><a href="#The console builder">The console builder</a></h2></li>
+            <h3><a href="#Documentation conventions">Documentation conventions</a></h3>
+            <li><h2><a href ="#Diagram 1 : Pizzas!">Diagram 1 : Pizzas!</a> </h2></li>
+            <li><h2><a href ="#Diagram 2 : Contact">Diagram 2 : Contact</a></h2></li>
+            <h3><a href ="#Any-Intents">#Any Intents</a></h3>
+            <h3><a href = "#NoLoops">"No" loops</a></h3>
+            <li><h2><a href = "#Conclusion">Conclusion</a></h2></li></ol>
 
-        <h2>Presentation</h2>
+        <h2><p id="Presentation" >Presentation</p></h2>
         <p>Opla is an open source chatbot, which whoever can paramater and integrate as they wish. Here are some tips and tricks to learn how to write a conversation.</p>
 
-        <h2>The console builder</h2>
+        <h2><p id="The console builder">The console builder</p></h2>
         <p>is as shown : </p>
         <img class="centered" src="images/builder.png">
         <p>it is divided into three parts :</p>
@@ -64,7 +64,7 @@
             <img class ="centered" src="images/click-save.png" width =1000>
         
  
-        <h2>Documentation conventions</h2> 
+        <h2><p id ="Documentation conventions">Documentation conventions</p></h2> 
         
         <p>We will document the exchanges in the following way : the buttons will be written in square brackets and the lines of code and the variables between chevrons. However, do not confuse line of code (which is displayed in blue in the editor) and variable (which is displayed in green), otherwise the settings will not work. Reminders of settings will be made in parentheses, to keep the logical structure of the explanation, but will not be repeated in the bot. <br> <br>
      
@@ -78,7 +78,7 @@
 
         <p>The code written between chevrons does not appear in the console, it is used to direct the discussion. The robot identifies the lines of codes equal to the conditional ones and thus follows the thread of the discussion, a little like the ends of a piece of puzzle.</p>
 
-        <h2>Diagram 1 : Pizzas!</h2>
+        <h2><p id = "Diagram 1 : Pizzas!">Diagram 1 : Pizzas!</p></h2>
         We will set the following path up : <br>
 
         <img class ="centered" src="images/image20.png" width =1000>
@@ -136,7 +136,7 @@
 
         Here we go, the first conversational pattern is created! Let's now follow suit with the "Contact" Diagram, which manages manual inputs done by the user.
 
-        <H2>Diagram 2 : Contact</H2>
+        <H2><p id = "Diagram 2 : Contact">Diagram 2 : Contact</p></H2>
         <img class ="centered" src="images/image4.png" width =1000> <br>
 
         One can quite, and this is the case here, create two conversation patterns in the same bot.<br>
@@ -158,7 +158,7 @@
         What is your phone number? (phonenbr=*)<br>
         &#60action=confirmphonenbr&#62<br>
 
-        <h2>#Any intents</h2>
+        <h2><p id = "Any-Intents">#Any intents</p></h2>
         We will create an intent #Any, of which here below the final result :
         <img class ="centered" src="images/any-phonenbr.png" width =1000><br>
 
@@ -211,12 +211,53 @@ action=confirmmail2<br>
 action = mailconfirmed2<br>
 Ok, your contact is registered.<br><br>
 
-<h2>"No" loops</h2>
+<h2><p id = "NoLoops">"No" loops</p></h2>
 
-We will then add two loops for the "No" on the left branch : we can see that the arrow rewinds them up one step upwards : we will then take as a conditional the former code line, which will loop the chatbot over the question.
+We will then add two loops for the "No" on the left branch : we can see that the arrow rewinds them up one step upwards : we will then take as a conditional the former code line, which will loop the chatbot over the question. <br><br>
+
+( <br>
+	#yes <br>
+	input = yes <br>
+	output = … &#60action=confirmphonenbr&#62 <br><br>
+
+#any<br>
+<span style="background-color: #FFFF00"> action=confirmphonenbr </span><br>
+	(phonenbr=*)is your phone number, right?<br>
+	<span style="background-color:lightblue">&#60action = phonenbrconfirmed&#62 [yes][No]</span><br><br>
+
+) - only written as a reminder<br>
+
+we then “plug” the “no” between phonenbrconfirmed and confirmphonenbr <br><br>
+	
+	#No <br>
+	<span style = "background-color: lightblue">phonenbrconfirmed</span> = <br>
+	What is your phone number?<br>
+    <span style="background-color: #FFFF00">(phonenbr=*) &#60action=confirmphonenbr&#62</span> <br><br>
+    
+Similarly, on mail we will connect the "no" between mailconfirmed and confirmmail <br><br>
+
+(<br>
+#any<br>
+<span style = "background-color: lightseagreen">action = confirmmail</span><br>
+	(mail=*) is your mail, right? <br>
+<span style = "background-color: lightcoral">&#60action=mailconfirmed&#62[Yes][No]</span><br>
+	) - reminder<br><br>
+
+	#No<br>
+	<span style = "background-color: lightcoral">action= mailconfirmed</span><br>
+	What is your mail?<br>
+	<span style = "background-color: lightseagreen">(mail=*)&#60action=confirmmail&#62</span><br><br>
 
 
 
+We are now done setting up diagram 2!<br><br>
+
+<H1><p id = "Conclusion">Conclusion</p></H1>
+<ul>
+    <li>insert action code lines and conditional connect to ste the conversation flow up</li>
+    <li>@any in #any, and structure like (var=*) in output is used to store and display variables' values</li>
+
+</ul>
 
     </body>
 
