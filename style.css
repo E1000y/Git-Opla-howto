@@ -6,6 +6,7 @@ img.centered{
 
 img.text-aligned{
     text-align: justify;
+    vertical-align:middle;
 
 }
 

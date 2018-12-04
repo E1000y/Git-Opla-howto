@@ -172,16 +172,16 @@
         input : (@any)<br>
         output : <br>
         action = confirmphonenbr <br>
-        (phonenbr=*) is your phone number, right?<br>
+       <!--(phonenbr=*)--> <img class="text-aligned" src="images/phonenbr.png" width =80> is your phone number, right?<br>
         &#60action=phonenbrconfirmed&#62[Yes][No]<br><br>
 
         #yes<br>
         action = phonenbrconfirmed<br>
-        What is your mail? (mail=*)&#60action=confirmmmail&#62<br><br>
+        What is your mail? <!--(mail=*)--> <img class="text-aligned" src="images/mail.png" width =60>&#60action=confirmmmail&#62<br><br>
 
         #Any<br>
         action = confirmmail <br>
-        (mail=*) is your mail, right? <br>
+        <!--(mail=*)--> <img class="text-aligned" src="images/mail.png" width =60> is your mail, right? <br>
         &#60action=mailconfirmed&#62 [yes][no] <br><br>
 
         #yes<br>
@@ -199,12 +199,12 @@ Would you like to give out your phone number? <br>
 Input : No<br>
 Output : <br>
 action = getphoneyesno<br>
-What is your mail? (mail=*)&#60action=confirmmail2&#62<br><br>
+What is your mail? <!--(mail=*)--> <img class="text-aligned" src="images/mail.png" width =60>&#60action=confirmmail2&#62<br><br>
 
 #any<br>
 Output :<br>
 action=confirmmail2<br>
-(mail=*) is your mail, right?<br>
+<!--(mail=*)--> <img class="text-aligned" src="images/mail.png" width =60> is your mail, right?<br>
 &#60action= mailconfirmed2&#62[yes][no]<br><br>
 
 #yes<br>
@@ -222,7 +222,7 @@ We will then add two loops for the "No" on the left branch : we can see that the
 
 #any<br>
 <span style="background-color: #FFFF00"> action=confirmphonenbr </span><br>
-	(phonenbr=*)is your phone number, right?<br>
+	<!--(phonenbr=*)--> <img class="text-aligned" src="images/phonenbr.png" width =80> is your phone number, right?<br>
 	<span style="background-color:lightblue">&#60action = phonenbrconfirmed&#62 [yes][No]</span><br><br>
 
 ) - only written as a reminder<br>
@@ -232,21 +232,21 @@ we then “plug” the “no” between phonenbrconfirmed and confirmphonenbr <b
 	#No <br>
 	<span style = "background-color: lightblue">phonenbrconfirmed</span> = <br>
 	What is your phone number?<br>
-    <span style="background-color: #FFFF00">(phonenbr=*) &#60action=confirmphonenbr&#62</span> <br><br>
+    <span style="background-color: #FFFF00"> <!--(phonenbr=*)--> <img class="text-aligned" src="images/phonenbr.png" width =80>  &#60action=confirmphonenbr&#62</span> <br><br>
     
 Similarly, on mail we will connect the "no" between mailconfirmed and confirmmail <br><br>
 
 (<br>
 #any<br>
 <span style = "background-color: lightseagreen">action = confirmmail</span><br>
-	(mail=*) is your mail, right? <br>
+	<!--(mail=*)--> <img class="text-aligned" src="images/mail.png" width =60> is your mail, right? <br>
 <span style = "background-color: lightcoral">&#60action=mailconfirmed&#62[Yes][No]</span><br>
 	) - reminder<br><br>
 
 	#No<br>
 	<span style = "background-color: lightcoral">action= mailconfirmed</span><br>
 	What is your mail?<br>
-	<span style = "background-color: lightseagreen">(mail=*)&#60action=confirmmail&#62</span><br><br>
+	<span style = "background-color: lightseagreen"><!--(mail=*)--> <img class="text-aligned" src="images/mail.png" width =60>&#60action=confirmmail&#62</span><br><br>
 
 
 
