@@ -12,7 +12,22 @@
     <body>
         <h1>For Windows (Non-unix) users / alternative to install.sh</h1>
         <h2>How to Install Opla Manually</h2>
-        To run and install Opla on Windows or MacOs, you must first install Docker Toolbox from the following link : <a href = "https://docs.docker.com/toolbox/overview/#ready-to-get-started">https://docs.docker.com/toolbox/overview/#ready-to-get-started</a>
+        To run and install Opla on Windows or MacOs, you must first install Docker Toolbox from the following link : <a href = "https://docs.docker.com/toolbox/overview/#ready-to-get-started">https://docs.docker.com/toolbox/overview/#ready-to-get-started</a> <br><br>
+
+        <span style="background-color:grey">After installation</span> : <br>
+
+        <ul>
+            <li> Start Docker Quickstart Terminal</li>
+            <li> Choose a target directory</li>
+            <li> Run <span style="background-color:lightgrey"> git clone https://github.com/Opla/opla.git </span></li>
+            <li> Run <span style="background-color: lightgrey"> cd opla/docker </span></li>
+            <li> Run <span style="background-color: lightgrey"> docker-compose up </span></li>
+            <li> Open VM Oracle VirtualBox, choose default configuration > network > advanced parameters, ports redirections, add a new entry : name = http host port = 80, guest port = 80</li>
+        </ul>
+        You should then be able to navigate to <a href = "http://localhost">http://localhost</a> and create your chatbot
+
+
+
 
         
 
